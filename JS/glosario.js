@@ -57,3 +57,12 @@ let glosario=[
         "definicion":"Relación con el ambiente fisicoquímico (no biológico) del medio"
     },
 ];
+
+
+let table="";
+
+for(concepto in glosario){
+    table+=`<tr><td>${concepto.concepto}</td><td>${concepto.definicion}</td></tr>`;
+}
+
+document.getElementsByClassName("glosario").innerHTML=table;
