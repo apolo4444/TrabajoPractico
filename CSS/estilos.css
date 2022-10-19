@@ -109,6 +109,45 @@ footer{
     height: 300px;
   }
 
+  a img{
+    width:100px;
+    height:100px; 
+  }
+
+  table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid purple;
+    
+  }
+
+  thead th:nth-child(1) {
+    width: 30%;
+  }
+  
+  thead th:nth-child(2) {
+    width: 20%;
+  }
+  
+  thead th:nth-child(3) {
+    width: 15%;
+  }
+  
+  thead th:nth-child(4) {
+    width: 35%;
+  }
+  
+  th, td {
+    padding: 20px;
+  }
+
+  .scroll{
+    overflow-y: scroll;
+    height:600px;
+    width:800px;
+  }
+
 
   @media screen and (max-width: 640px) {
 

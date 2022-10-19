@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="./Imagenes/navegador.png" type="image/x-icon">
     <link rel="stylesheet" href="./CSS/estilos.css">
 </head>
-<body>
+<body id="app">
 
     <header class="white">
         <div class="green center">
@@ -18,23 +18,25 @@
         
     </header>
 
-    <menu class="white">
+    <menu  class="white">
         <div class="row center" >
             <ul>
-                <li>Introduccion</li>
-                <li>Juegos</li>
-                <li>Teoria Base</li>
-                <li>Acerca de...</li>
-                <li> <a href="glosario.html">Glosario</a></li>
-                <li><a href="clima.html">Clima</a></li>
+                <li @click="(number=0)">Introduccion </li>
+                <li @click="(number=1)">Juegos</li>
+                <li @click="(number=2)">Teoria Base</li>
+                <li @click="(number=3)">Acerca de...</li>
+                <li @click="(number=4)">Glosario</li>
+                <li @click="(number=5)">Clima</li>
+                <li @click="(number=6)">Enviar Comentarios</li> 
             </ul>
         </div>
     </menu>
 
     <main class="white main">
+
         
-            <div class="green">
-                <h2 >Introduccion</h2>
+            <div v-show="(number==0)" class="green">
+                <h2>Introduccion</h2>
             <p >Numerosas organizaciones gubernamentales y no gubernamentales trabajan intensamente en Educación Ambiental, especialmente en las últimas décadas.
                 <br>Las técnicas que pueden ser empleadas en la motivación y en la fijación de conceptos que tienden al
                 desarrollo sustentable, como actividades de campo o trabajos prácticos de laboratorio. 
@@ -46,23 +48,117 @@
             </p>
             </div>
             
-            <div class="green center">
+            <div v-show="(number==1)" class="green center">
                 <h2 class="white">JUEGOS</h2>
-                <a href="net.html">Red Ambiental</a>
-                <a href="bingo.html">Loteria Ambiental</a>
-                <a href="domino.html">Domino Ambiental</a>
+                
+                <a href="net.html"> <img src="./Imagenes/Redconceptual.png" alt="Red Ambiental" srcset="">  <p>Red Ambiental</p></a> 
+                <a href="bingo.html"><img src="./Imagenes/bingo.jpg" alt="Loteria Ambiental" srcset="">  <p>Loteria Ambiental</p> </a> 
+                <a href="domino.html"><img src="./Imagenes/domino3.jpg" alt="Domino Ambiental" srcset=""> <p>Domino Ambiental</p> </a>
+            
+                
                 
             </div>
 
-            <div class="green center">
+            <div v-show="(number==2)" class="green center">
                 <h2>A tener en cuenta</h2>
                 <p>
                     <b>Juegos de participación realizados sobre la base de los 
                         conceptos de una exposición temática previa.</b> 
                     </p>
             </div>
-        
 
+            <div v-show="(number==3)" class="green center">
+                <h2>Acerca de la obra original</h2>
+            <br>
+            <img src="./imagenes/smile.gif" alt="Imagen del sitio" width="500">
+            <br>
+            <p>
+                Para el desarrollo de este sitio web, se tomaron las ideas expresadas en la obra <i>"Educación Ambiental
+                a través de técnicas didácticas participativas"</i> de la muy querida y respetada Biologa y Ecologa, Irene R. Wais de Badgen <br> 
+                a quien le debo mucha gratitud por toda la educaion de calidad y excelencia que brinda dia a dia <br>
+                <b>Agradezco de Corazon toda la pasion que le pones a la educacion y el amor por el ambiente</b>
+            </p>
+            <p>
+                Con lo que a mi respecta, uno no puede proteger lo que no conoce, <br> 
+                es por eso que la Educacion Ambienal es indispensable en nuestra vida <br>
+                ya que preservar el ambiente y sus recursos va a ser vital para nuestro futuro. 
+            </p>
+            </div>
+
+            <div v-show="(number===4)" class="green center" >
+                 
+                    <h1>Glosario Ambiental </h1>
+                    <div v-if="error">
+                        Lo sentimos se produjo un error
+                        Error: {{nroerror}}
+                    </div>
+                    <div v-else-if="cargando==false"    class="container scroll">
+                       
+                        <table class="table table-striped">
+                            
+                                <thead>
+                                    <tr>
+                                        <th>Concepto</th>
+                                        <th>Definicion</th>
+                                    </tr>   
+                                </thead>
+                                <tbody>
+                                <tr v-for="concepto of conceptos">
+                                    <td>{{concepto.concepto}}</td>
+                                    <td>{{concepto.Definicion}}</td>
+                                </tr>
+                            </tbody>
+                           
+                        </table>
+                    </div>
+                    <div v-else   class="spinner-border">
+                        <!-- spinner mientras se esta cargando-->
+                    </div>
+        
+            </div>
+
+            <div v-show="(number==5)">
+                <iframe width="650" height="450" src="https://embed.windy.com/embed2.html?lat=-23.812&lon=-66.755&detailLat=-23.812&detailLon=-66.755&width=650&height=450&zoom=11&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
+            </div>
+        
+            <div v-show="number==6" class="green">
+                <form action="show_data.html">
+                  <label for="name">Nombre</label>
+                  <input type="text" name="name" id="name" required>
+                  <br><br>
+                  <label for="surname">Apellido</label>
+                  <input type="text" name="surname" id="surname" required>
+                  <br><br>
+                  <label for="location">Direccion</label>
+                  <input type="text" name="location" id="location" value="">
+                  <br><br>
+                  <label for="country">Ciudad</label>
+                  <input type="text" name="country" id="country" value="">
+                  <br><br>
+                  <label for="code">Codigo postal</label>
+                  <input type="text" name="code" id="code" >
+                  <br><br>
+                  <label for="birthday">Fecha de Nacimiento</label>
+                  <input type="date" name="birthday" id="birthday" placeholder="dd/mm/aa">
+                  <br><br>
+                  <label for="sex">Genero</label>
+                  <input type="radio" name="sex" value=Hombre> Hombre
+                  <input type="radio" name="sex" value=Mujer> Mujer
+                  <input type="radio" name="sex" value=Otro> Otro
+                  <br><br>
+                  <label for="level">Estudios</label>
+                  <input type="checkbox" name="level" value=Primario> Primario
+                  <input type="checkbox" name="level" value=Secundario> Secundario
+                  <input type="checkbox" name="level" value=Terciario> Terciario
+                  <input type="checkbox" name="level" value=Universitario> Universitario
+                  <input type="checkbox" name="level" value=Otro> Otro
+                  <br>
+                  
+                  <input type="submit" value="Enviar">
+              </div>
+
+        
+            
     </main>
 
     <aside class="white">
@@ -71,10 +167,12 @@
 
     <footer class="white">
         <div class="green center">
-            <p>Todos los derechos reservados<br>Copyright 2022 <br> <a href="registro.html">Enviar Comentarios</a> </p>
+            <p>Todos los derechos reservados<br>Copyright 2022 <br>  </p>
         </div>
     </footer>
     
-   
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./JS/main.js"></script>
+    <!-- <script src="./JS/glosario.js"></script> -->
 </body>
 </html>
