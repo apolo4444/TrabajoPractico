@@ -9,7 +9,6 @@ const { createApp } = Vue  //creo un objeto VUE llamdo createApp
         error:false,
         nroerror:0,
         cargando:true
-        
       } 
     },
     methods: {
