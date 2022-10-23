@@ -4,7 +4,7 @@ const { createApp } = Vue  //creo un objeto VUE llamdo createApp
     data() {
       return {
         number:0,
-        url:"../.vscode/glosario.json",
+        url:'../.vscode/glosario.json',
         conceptos:[],
         error:false,
         nroerror:0,
