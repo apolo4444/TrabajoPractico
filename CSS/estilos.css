@@ -1,189 +1,451 @@
-* {
-    box-sizing: border-box;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-html {
-    font-family: "Lucida Sans", sans-serif;
-  }
+:root{
+    --padding-container: 100px 0;
+    --color-title: #0082ed;
+    
+
+}
 
 body{
-    background-image:url(../Imagenes/planetaTierra2.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-   display: grid;
-   grid-template-rows: 5% repeat(3, 30%)  5% ;
-   grid-template-columns:repeat(5, 20%);
-   grid-gap:2% 2%;
-   height:800px;
+    font-family: 'Poppins', sans-serif;
 }
 
-.white{
-    color:antiquewhite;
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: var(--padding-container);
+}
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    max-height: 800px;
+    position: relative;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    color: #fff;
+
+}
+
+/*Arreglo de imagen de fondo con pentagono invertido*/
+
+.hero::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url(/IMAGES/planeta-tierra-con-destello-de-luz_3840x2160_xtrafondos.com\ \(1\).jpg);
+    background-size: cover;
+    clip-path: polygon(100% 0, 100% 80%, 50% 95%, 0 80%, 0 0);
+    z-index: -1;    
+}
+
+/*-----------Barra superior---------------*/
+
+.nav{
+    --padding-container:0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav__title{
+    font-weight: 300;
+}
+
+/*Items del menu*/
+
+.nav__link{
+    margin-left: auto;
+    padding: 0; 
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 2em;
+} 
+
+.nav__items{
+    list-style: none;
+}
+
+
+.nav__links{
+    color: #fff;
+    text-decoration: none;
+
+}
+
+/*Menu hamburguesa*/
+
+.nav__menu{
+    margin-left: auto;
+    cursor: pointer;
+    display: none;
+}
+
+.nav__img{
+    display: block;
+    width: 30px;
+}
+
+.nav__close{
+    display: var(--show, none);
+}
+
+/*Contenedor hero, parrafo y titulo central*/
+
+.hero__container{
+    max-width: 800px;
+    display: grid;
+    --padding-container:0;
+    grid-auto-rows: max-content;
+    align-content: center;
+    gap: 1em;
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+.hero__title{
+    font-size: 4rem;
+}
+
+.hero__paragraph{
+    margin-bottom: 20px;
+    font-size:large;
+}
+
+/*boton de introduccion*/
+.cta{
+    display: inline-block;
+    background-color: #2091f9;
+    justify-self: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 13px 20px;
+    border-radius: 30px;
+    margin-bottom: 40px;
     
 }
+
+/*---------------Segundo contenedor-------------------*/
+
+.about{
+    text-align: center;
+
+}
+
+.paragraph{
+    font-size: 20px;
+}
+
+.paragraph__intro{
+    font-size: 20px;
+    text-align: center;
+    margin-top: -50px;
+    margin-bottom: 50px;
+    background-color: #8fcafa51;
+}
+
+.subtitle__intro{
+    color: var(--color-title);
+    font-size: 3rem;
+    margin-bottom: 25px;
+    margin-top: 10px
+}
+
+.subtitle{
+    color: var(--color-title);
+    font-size: 3rem;
+    margin-bottom: 25px;
+}
+
+/*Titulo del recuadro juegos*/
+.about__title{
+    color: #fff;
+    font-size: 25px;
+}
+
+
+/*Parrafo del recuadro juegos*/
+.about__paragraph{
+    line-height: 1,7;
+    color: #fff;
+    margin-left: 15px;
+    margin-right: 15px;
+    
+}
+
+/*Puesta en columnas de los recuadros*/
+.about__main{
+    padding-top: 70px;
+    display: grid;
+    gap: 1em;
+    overflow: hidden;
+    grid-template-columns: repeat(auto-fit, minmax(260px,auto));
+}
+
+
+/*Fondo y centrado de los recuadros*/
+.about__icons{
+    display: grid;
+    gap: 30px;
+    justify-items: center;
+    width: 390px;
+    margin-bottom: 30px;
+    margin: 0 auto;
+    background-image: linear-gradient(180deg, #014067 0%, #00000034 100%), url(/IMAGES/world-environment-day-background-free-vector.jpg);
+}
+
+.about__icon{
+    width: 50px;
+    padding-top: 40px;
+}
+
+
+/*------------------Mini galeria sector----------------*/
+
+.sector3{
+    background-image: linear-gradient(180deg, #000000cd 0%, #03308c7f 100%), url(/IMAGES/69468.jpg);
+    background-size: cover;
+    text-align: center;
+}
+
+.sector3__container{
+    display: grid;
+    gap: 1em;
+    align-items: center;
+}
+
+.container3__paragraph{
+    font-size: 25px;
+    color: #fff;
+}
+
+.container3__subtitle{
+    color: #fff;
+    font-size: 3rem;
+    margin-bottom: 25px;
+
+}
+
+/*Fotos deslizando*/
+
+.slider{
+    width: 120%;
+    height: 500px;
+    margin-top: 50px;
+    overflow: hidden;
+    margin-left: -50PX;
+}
+
+.slider__pic{
+    display: flex;
+    animation: carrousel 20s infinite alternate linear;
+    width: 400%;
+}
+
+.slider__images{
+    width: 100%;
+    list-style: none;
+}
+
+.slider img{
+    width: 100%;
+    height: 100%;
+}
+
+/*animacion carrousel*/
+@keyframes carrousel{
+    0%{margin-left: 0;}
+    20%{margin-left: 0;}
+
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+
+    50%{margin-left: -200%;}
+    70%{margin-left: -200%;}
+
+    75%{margin-left: -300%;}
+    100%{margin-left: -300%;}
+}
+
+/*--------------------sector del copy---------------*/
+
+.sector4{
+    text-align: center;
+    background-color: black;
+}
+
+.sector4__paragraph{
+    color: #fff;
+}
+
+.sector4__subtitle{
+    color: #fff;
+}
+
+.coment{
+    display: inline-block;
+    margin-top: 30px;
+    justify-self: center;
+    color: #fff;
+}
+
+/*-------------------------------------------------------------------------------------------r*/
+.juego1{
+    background-image: linear-gradient(180deg, #ffffffd0 0%, #ffffffc4 100%), url(/IMAGES/loteria.jpg);
+    background-size: cover;
+}
+
+.juego2{
+    background-image: linear-gradient(180deg, #ffffffd0 0%, #ffffffc4 100%), url(/IMAGES/domino.jpg);
+    background-size: cover;
+}
+
+.juego3{
+    background-image: linear-gradient(180deg, #ffffffd0 0%, #ffffffc4 100%), url(/IMAGES/redes.jpg);
+    background-size: cover;
+}
+
+.clima1{
+    background-image: linear-gradient(180deg, #ffffffbd 0%, #ffffff62 100%), url(/IMAGES/climaf.jpeg);
+    background-size: cover;
+}
+
+.coments1{
+    background-color: #cfe3f8;
+}
+
+.clima__top{
+    margin-top: 50px;
+}
+
+.headpage{
+    background-color: #014067;
+    width: 100%;
+    height: 10%;
+    min-height: 20px;
+    max-height: 100px;
+    position: relative;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    color: #fff;
+}
+
+.bingo2__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10em;
+    align-items: center;
+    margin-top: -5%;
+}
+
+.bingo2__picture{
+    max-width: 500px;
+}
+
+.bingo2__img{
+    width: 100%;
+    display: block;
+}
+
+.bingo2__paragraph{
+    line-height: 1.7;
+}
+
+.bingo2__subtitle{
+    color: var(--color-title);
+    font-size: 3rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+
+.submit{
+    margin-top: 50px;
+
+}
+
 .green{
     background-color: rgb(127, 255, 0,0.4);
 }
 
-header{
-   grid-column-start: 2;
-   grid-column-end: 5;
-}
-
-menu{
-  grid-column-start: 1;
-   grid-column-end: 2;
-   grid-row-start: 3;
-   grid-row-end: 5;
-}
-
-.menu2{
-  grid-column-start: 1;
-   grid-column-end: 4;
-   grid-row-start: 2;
-   grid-row-end: 5;
-}
-
-main{
- 
-  grid-column-start: 2;
-   grid-column-end: 5;
-   grid-row-start: 2;
-   grid-row-end: 5;
-}
-
-.main{
- 
-  padding: 100px 5px 5px 5px;
-}
-
 .main2{
-
-  grid-column-start: 4;
-   grid-column-end: 5;
-   grid-row-start: 2;
-   grid-row-end: 6;
-}
-
-.flex{
-  padding: 100px 5px 5px 5px;
-}
-
-footer{
-    grid-row-start: 5;
-    grid-row-end: 6;
-    grid-column-start: 2;
-    grid-column-end: 5;
-
-}
-
-.row::after {
-    content: ""; 
-    clear: both; 
-     display: block; 
-  }
-
-  menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  menu li {
-     padding: 8px; 
-     margin-bottom: 7px; 
-   background-color: rgb(127, 255, 0,0.5); 
-    color:aliceblue;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  }
-  
-  menu li:hover {
-    background-color: #0099cc;
-  }
-
-  .center{
     text-align: center;
-  }
-
-  div img{
-    width:300px;
-    height: 300px;
-  }
-
-  a img{
-    width:100px;
-    height:100px; 
-  }
-
-  table {
-    table-layout: fixed;
-    width: 100%;
-    border-collapse: collapse;
-    border: 3px solid purple;
-    
-  }
-
-  thead th:nth-child(1) {
-    width: 30%;
-  }
-  
-  thead th:nth-child(2) {
-    width: 20%;
-  }
-  
-  thead th:nth-child(3) {
-    width: 15%;
-  }
-  
-  thead th:nth-child(4) {
-    width: 35%;
-  }
-  
-  th, td {
-    padding: 20px;
-  }
-
-  .scroll{
-    overflow-y: scroll;
-    height:600px;
-    width:800px;
-  }
-
-  .foot{
     margin-top: 100px;
-  }
+}
 
+.cta3{
+    display: inline-block;
+    background-color: #2091f9;
+    justify-self: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 13px 20px;
+    border-radius: 30px;
+    margin-bottom: 40px;
+    margin-top: 30px;
+    
+}
 
-  @media screen and (max-width: 940px) {
+.smile{
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
 
-    body{
-      display: block;
-      background-position: center;
-      
-    }
-    iframe{
-      width:100%;
-      height:600px;
-    }
+/*------------------------------------------*/
 
-    .container{
-      width:100%;
-      height:600px;
-    }
-   
-    }
-    
-     
-    
-    @media screen and (min-width: 940px) and (max-width: 1280px) {
-       
-    
-    
-    }
-    
-     
-    
-    @media screen and (min-width: 1280px) {
-    
-  
-    }
+button {
+  background-color: #47a386;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 25px;
+}
+
+.modal-container {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.3);
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;  
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: opacity 0.3s ease;
+}
+
+.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.modal {
+  background-color: #fff;
+  width: 600px;
+  max-width: 100%;
+  padding: 30px 50px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.modal h1 {
+  margin: 0;
+}
+
+.modal p {
+  opacity: 0.7;
+  font-size: 14px;
+}

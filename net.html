@@ -1,42 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="./CSS/estilos.css"> -->
-    <title>Net</title>
-    <link rel="shortcut icon" href="./Imagenes/navegador.png" type="image/x-icon">
+    <title>Red ambiental</title>
+    <link rel="shortcut icon" href="./IMAGES/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="./CSS/estilos.css">
-    <link rel="stylesheet" href="./CSS/animaciones.css">
+    <link rel="stylesheet" href="./CSS/normalize.css">
 </head>
-<body  class="slidein">
+<body class="juego3">
 
-    <header class="white">
-        <div class="green center">
-            <a href="index.html">Home</a>
-            <h1>Red Ambiental</h1>
-        </div>
-        
-    </header>
-
-    <menu class="white menu2">
-
-            <div class="green">
-                <h2>Explicacion</h2>
-                <p>
-                    Este entretenimiento se basa en las causas y 
-    consecuencias de cada problema ambiental. A partir de una línea de asociaciones que se concatenan con 
-    ramificaciones, se puede construir una trama con muchas variaciones de las redes conceptuales clásicas utilizadas en 
-    las ciencias de la educación. <br> Así, surgen relaciones directas e indirectas obtenidas a través de eslaboness 
-    interconectados donde cada uno tiene relación con el anterior y a la vez con el siguiente. Se parte de la premisa 
-    de que en la naturaleza <span>“todo está relacionado con todo”</span>. 
-                </p>
+    <header class="headpage">
+        <nav class="nav container">
+            <div class="nav logo">
+                <h2 class="nav__title"> Educacion Ambiental</h2>
             </div>
 
-            <div>
-                <h2>¿Como jugar?</h2>
-                <ol>
+            <ul class="nav__link nav__link--menu">
+                <li class="nav__items">
+                    <a href="index.html" class="nav__links">Inicio</a>
+                </li>
+                <li class="nav__items">
+                    <a href="#games" class="nav__links">Juegos</a>
+                </li>
+                <li class="nav__items">
+                    <a href="clima.html" class="nav__links">Clima</a>
+                </li>
+                <li class="nav__items">
+                    <a href="sorpresa.html" class="nav__links">¡Sorpresa!</a>
+                </li>
+                <li class="nav__items">
+                    <a href="acerca.html" class="nav__links">Acerca de</a>
+                </li>
+        
+                <img src="./IMAGES/cerrar.svg" class="nav__close">
+            </ul>
+        
+            <div class="nav__menu">
+                <img src="./IMAGES/menu.svg" class="na__img">
+            </div>
+
+        </nav>
+    </header>
+
+    <section class="container about">          
+        <h2 class="subtitle">Explicacion</h2>
+        <p class="paragraph">
+            Este entretenimiento se basa en las causas y 
+            consecuencias de cada problema ambiental. A partir de una línea de asociaciones que se concatenan con 
+            ramificaciones, se puede construir una trama con muchas variaciones de las redes conceptuales clásicas utilizadas en 
+            las ciencias de la educación. <br> Así, surgen relaciones directas e indirectas obtenidas a través de eslaboness 
+            interconectados donde cada uno tiene relación con el anterior y a la vez con el siguiente. Se parte de la premisa 
+            de que en la naturaleza <span>“todo está relacionado con todo”</span>.
+        </p>          
+    </section>
+
+    <section class="bingo2">
+        <h2 class="bingo2__subtitle">¿Como jugar?</h2>
+        <div class="bingo2__container container">
+            <div class="bingo2__texts">
+                <ol class="bingo2__paragraph">
                     <li>El 
                         entretenimiento consiste en recortar tarjetas de cartulina de 
                         8 cm. x 5 cm. aproximadamente. Es un tamaño medio ideal 
@@ -65,29 +89,23 @@
                     </li>
                 </ol>
             </div>
-        
-       
-    </menu>
 
-    <main class="white main2">
-        
-            <div class="flex">
-                <img src="./Imagenes/net1.PNG" alt="Ejemplo del juego">
-            <!-- <img src="./Imagenes/net2.PNG" alt="Ejemplo del juego"> -->
-            </div>
-        
-
-    </main>
-
-    <aside class="white">
-
-    </aside>
-
-    <footer class="white">
-        <div class="green center">
-            <p>Todos los derechos reservados<br>Copyright 2022 <br> <a href="registro.html">Enviar Comentarios</a> </p>
-        </div>
-    </footer>
-    
+            <figure class="bingo2__picture">
+                <img src="/IMAGES/net1.PNG" class="bingo1__img">
+            </figure>
+        </div>           
+    </section> 
 </body>
+<footer class="white">
+    <section class="sector4">
+        <div class="sector4__container container">
+            <div class="sector4__text">
+                <h2 class="sector4__subtitle">Todos los derechos reservados</h2>
+                <P class="sector4__paragraph">Copyright 2022</P>
+                <a href="#" class="coment">Hacer un comentario</a>
+            </div>
+        </div>
+    </section>
+</footer>
+
 </html>
