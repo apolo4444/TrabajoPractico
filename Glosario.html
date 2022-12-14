@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Glosario Ambiental</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- Estilos Propios  -->
+  <link rel="stylesheet" href="./CSS/estilos.css">
+  <link rel="stylesheet" href="./CSS/normalize.css">
+  <link rel="shortcut icon" href="./IMAGES/favicon-32x32.png" type="image/x-icon">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  
+</head>
+
+<body>
+  <header>
+    <header class="headpage">
+      <nav class="nav container">
+          <div class="nav logo">
+              <h2 class="nav__title"> Educacion Ambiental</h2>
+          </div>
+
+          <ul class="nav__link nav__link--menu">
+              <li class="nav__items">
+                  <a href="index.html" class="nav__links">Inicio</a>
+              </li>
+              <li class="nav__items">
+                  <a href="index.html" class="nav__links">Juegos</a>
+              </li>
+              <li class="nav__items">
+                  <a href="" class="nav__links">Clima</a>
+              </li>
+              <li class="nav__items">
+                  <a href="" class="nav__links">¡Sorpresa!</a>
+              </li>
+              <li class="nav__items">
+                  <a href="" class="nav__links">Acerca de</a>
+              </li>
+      
+              <img src="./IMAGES/cerrar.svg" class="nav__close">
+          </ul>
+      
+          <div class="nav__menu">
+              <img src="./IMAGES/menu.svg" class="na__img">
+          </div>
+
+      </nav>
+  </header>
+  </header>
+  <main style="margin: 1% 10%;">
+
+    <div class="container" id="app">
+      <h1>Glosario Ambiental</h1>
+      <section v-if="errored">
+       <p>Lo sentimos, no es posible obtener la información en este momento, por favor intente nuevamente mas tarde</p>
+      </section>
+      <section v-else>
+          <div v-if="loading">Cargando....
+              <div class="spinner-border" role="status">
+                  <span class="sr-only"></span>
+              </div>
+          </div>
+          <div v-else>
+              <a href="create.html" class="btn btn-success">Nuevo</a>
+              <br><br>
+        
+              <table class="table table-striped table-responsive">
+                  <tr>
+                      <!-- <th>Id</th> -->
+                      <th>Concepto</th>
+                      <th>Definicion</th>
+                      <th>Acciones</th>
+                  </tr>
+                  <tr v-for="concepto in conceptos">
+                      <!-- <td>{{concepto.id}}</td> -->
+                      <td>{{concepto.nombre}}</td>
+                      <td>{{concepto.definicion}}</td>
+                      <td>
+                          <a :href="'update.html?id='+concepto.id+'&nombre='+concepto.nombre+'&definicion='+concepto.definicion" class="btn btn-primary">Modificar</a>
+                          <button v-on:click="eliminar(concepto.id)" class="btn btn-danger">Eliminar</button>
+                      </td>
+                  </tr>
+              </table>
+      </section>
+  </div>
+
+  </main>
+  <footer class="white">
+    <section class="sector4">
+        <div class="sector4__container container">
+            <div class="sector4__text">
+                <h2 class="sector4__subtitle">Todos los derechos reservados</h2>
+                <P class="sector4__paragraph">Copyright 2022</P>
+                <a href="coments.html" class="coment">Hacer un comentario</a>
+            </div>
+        </div>
+    </section>
+</footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<script src="./JS/main.js"></script>
+</body>
+
+</html>

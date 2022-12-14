@@ -9,6 +9,9 @@
 
 body{
     font-family: 'Poppins', sans-serif;
+    background-image:url(../IMAGES/world-environment-day-background-free-vector.jpg);
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .container{
