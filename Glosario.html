@@ -34,13 +34,13 @@
                   <a href="index.html" class="nav__links">Juegos</a>
               </li>
               <li class="nav__items">
-                  <a href="" class="nav__links">Clima</a>
+                  <a href="clima.html" class="nav__links">Clima</a>
               </li>
               <li class="nav__items">
-                  <a href="" class="nav__links">¡Sorpresa!</a>
+                  <a href="sorpresa.html" class="nav__links">¡Sorpresa!</a>
               </li>
               <li class="nav__items">
-                  <a href="" class="nav__links">Acerca de</a>
+                  <a href="acerca.html" class="nav__links">Acerca de</a>
               </li>
       
               <img src="./IMAGES/cerrar.svg" class="nav__close">
@@ -73,14 +73,14 @@
               <table class="table table-striped table-responsive">
                   <tr>
                       <!-- <th>Id</th> -->
-                      <th>Concepto</th>
-                      <th>Definicion</th>
-                      <th>Acciones</th>
+                      <th><b>Concepto</b></th>
+                      <th><b>Definicion</b></th>
+                      <th><b>Acciones</b></th>
                   </tr>
                   <tr v-for="concepto in conceptos">
                       <!-- <td>{{concepto.id}}</td> -->
-                      <td>{{concepto.nombre}}</td>
-                      <td>{{concepto.definicion}}</td>
+                      <td><b>{{concepto.nombre}}</b></td>
+                      <td><b>{{concepto.definicion}}</b></td>
                       <td>
                           <a :href="'update.html?id='+concepto.id+'&nombre='+concepto.nombre+'&definicion='+concepto.definicion" class="btn btn-primary">Modificar</a>
                           <button v-on:click="eliminar(concepto.id)" class="btn btn-danger">Eliminar</button>
