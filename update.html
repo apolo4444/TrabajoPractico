@@ -17,10 +17,13 @@
         <div class="container">
             <h1>Modificacion de concepto</h1>
             <form >
-              <!--   <div class="mb-3">
-                    <label for="txtId">Id</label>
-                            <input type="text" class="form-control" name="txtId" id="txtId" disabled><br>
-                </div> -->
+                <div v-if="view">
+                    <div class="mb-3">
+                        <label for="txtId">Id</label>
+                                <input type="text" class="form-control" name="txtId" id="txtId" disabled><br>
+                    </div>
+                </div>
+                
                 <div class="mb-3">
                     <label for="txtNombre">Nombre:</label>
                     <input type="text" class="form-control" name="txtNombre" id="txtNombre"><br>
@@ -32,9 +35,11 @@
                 <button type="button" class="btn btn-success" onclick="modificar()">Grabar </button>
             </form>
             <br>
-            <a href="index.html" class="btn btn-warning">Home</a>
+             <a href="Glosario.html" class="btn btn-warning">Home</a>
         </div>
     </main>
+    <script src="./JS/main.js"></script>
     <script src="./JS/update.js"></script>
+    
 </body>
 </html>

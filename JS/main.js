@@ -7,6 +7,9 @@ if (document.getElementById("app")) {
                 conceptos: [],
                 errored: false,
                 loading: true,
+                //Variables agregadas
+                admin:false,
+                view:false,
                 //url: "http://localhost:5000/glosario"
                 url:"https://matiaslasorsa.pythonanywhere.com/glosario"
                 }
