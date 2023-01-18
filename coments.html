@@ -27,9 +27,9 @@
                 <li class="nav__items">
                     <a href="clima.html" class="nav__links">Clima</a>
                 </li>
-                <li class="nav__items">
+                <!-- <li class="nav__items">
                     <a href="sorpresa.html" class="nav__links">¡Sorpresa!</a>
-                </li>
+                </li> -->
                 <li class="nav__items">
                     <a href="acerca.html" class="nav__links">Acerca de</a>
                 </li>
@@ -46,7 +46,8 @@
 
     <section class="container about" id="formulario">          
         <h2 class="subtitle">Formulario</h2>
-        <form action="show_data.html">
+        <h2>Tu comentario nos ayuda a mejorar dia a dia nuestro sitio web para que pueda ser lo mas util posibles.</h2>
+       <!--  <form action="show_data.html">
             <label for="name">Nombre</label>
             <input type="text" name="name" id="name" required>
             <br><br>
@@ -78,7 +79,21 @@
             <input type="checkbox" name="level" value=Otro> Otro
             <br>
             <input class="submit" type="submit" value="Enviar">
+            
+
+        </form> -->
+        <form onsubmit="" action="mailto:matiaslasorsa@gmail.com?subject=Comentarios">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" value="@" required>
+            <br><br>
+            <label for="comentario">Deja tu comentario</label>
+            <br>
+            <textarea name="comentario" id="comentario" cols="100" rows="20"></textarea>
+            <br>
+            <input class="submit" type="submit" value="Enviar">
         </form>
+
+        
 
     </section>
 
