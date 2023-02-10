@@ -8,7 +8,7 @@ if (document.getElementById("app")) {
                 errored: false,
                 loading: true,
                 //Variables agregadas
-                admin:false,
+                admin:true,
                 view:false,
                 //url: "http://localhost:5000/glosario"
                 url:"https://matiaslasorsa.pythonanywhere.com/glosario"
