@@ -8,10 +8,11 @@ if (document.getElementById("app")) {
                 errored: false,
                 loading: true,
                 //Variables agregadas
-                admin:true,
+                admin:false,
                 view:false,
                 //url: "http://localhost:5000/glosario"
                 url:"https://matiaslasorsa.pythonanywhere.com/glosario"
+                //url:"http://localhost/phpmyadmin/index.php?route=/sql&pos=0&db=ambiental&table=glosarioambiental"
                 }
         },
         methods: {
